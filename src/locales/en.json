@@ -922,7 +922,9 @@
             "claude_opus_thinking": "Strongest Thinking",
             "gemini_2_5_flash": "Flash Model (2.5)",
             "gemini_2_5_pro": "High Performance (2.5)",
-            "claude_4_5": "Latest Reasoning"
+            "claude_4_5": "Latest Reasoning",
+            "pro_high_3_1": "Highest quality & intelligence for Gemini 3.1",
+            "pro_low_3_1": "Balanced cost & performance for Gemini 3.1"
         },
         "mapping": {
             "title": "Claude Code Model Mapping",

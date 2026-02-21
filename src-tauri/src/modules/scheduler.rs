@@ -52,6 +52,9 @@ pub fn check_cooldown(key: &str, cooldown_seconds: i64) -> bool {
 }
 
 pub fn start_scheduler(app_handle: Option<tauri::AppHandle>, proxy_state: crate::commands::proxy::ProxyServiceState) {
+    // [DISABLED] 禁用智能预热功能
+    return;
+
     tauri::async_runtime::spawn(async move {
         logger::log_info("Smart Warmup Scheduler started. Monitoring quota at 100%...");
         

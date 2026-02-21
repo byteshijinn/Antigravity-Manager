@@ -41,10 +41,22 @@ pub struct WarmupResponse {
 }
 
 /// 处理预热请求
+#[allow(unused_variables)]
 pub async fn handle_warmup(
     State(state): State<AppState>,
     Json(req): Json<WarmupRequest>,
 ) -> Response {
+    // [DISABLED] 禁用预热功能
+    return (
+        StatusCode::SERVICE_UNAVAILABLE,
+        Json(WarmupResponse {
+            success: false,
+            message: "Warmup feature is disabled".to_string(),
+            error: Some("Warmup service is not available".to_string()),
+        }),
+    )
+        .into_response();
+
     let start_time = std::time::Instant::now();
 
     // ===== 前置检查：跳过 gemini-2.5-* 家族模型 =====

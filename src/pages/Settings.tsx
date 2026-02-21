@@ -7,7 +7,8 @@ import { AppConfig } from '../types/config';
 import ModalDialog from '../components/common/ModalDialog';
 import { showToast } from '../components/common/ToastContainer';
 import QuotaProtection from '../components/settings/QuotaProtection';
-import SmartWarmup from '../components/settings/SmartWarmup';
+// [DISABLED] 智能预热功能已禁用
+// import SmartWarmup from '../components/settings/SmartWarmup';
 import PinnedQuotaModels from '../components/settings/PinnedQuotaModels';
 import { useDebugConsole } from '../stores/useDebugConsole';
 
@@ -753,8 +754,8 @@ function Settings() {
                                 )}
                             </div>
 
-                            {/* 智能预热 (Smart Warmup) */}
-                            <div className="group bg-white dark:bg-base-100 rounded-xl p-5 border border-gray-100 dark:border-base-200 hover:border-orange-200 transition-all duration-300 shadow-sm">
+                            {/* [DISABLED] 智能预热 (Smart Warmup) */}
+                            {/* <div className="group bg-white dark:bg-base-100 rounded-xl p-5 border border-gray-100 dark:border-base-200 hover:border-orange-200 transition-all duration-300 shadow-sm">
                                 <SmartWarmup
                                     config={formData.scheduled_warmup}
                                     onChange={async (newConfig) => {
@@ -763,7 +764,6 @@ function Settings() {
                                             scheduled_warmup: newConfig
                                         };
                                         setFormData(newFormData);
-                                        // Hot Save
                                         try {
                                             await saveConfig(newFormData);
                                         } catch (error) {
@@ -771,7 +771,7 @@ function Settings() {
                                         }
                                     }}
                                 />
-                            </div>
+                            </div> */}
 
                             {/* 配额保护 (Quota Protection) */}
                             <div className="group bg-white dark:bg-base-100 rounded-xl p-5 border border-gray-100 dark:border-base-200 hover:border-rose-200 transition-all duration-300 shadow-sm">
