@@ -26,8 +26,12 @@ jobs:
       - name: Install frontend dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build the app (no bundle, no signing)
-        run: npm run tauri build -- --no-bundle
+      - name: Build frontend
+        run: npm run build
+
+      - name: Build Rust (release)
+        run: cargo build --release
+        working-directory: src-tauri
 
       - name: Upload Windows binary
         uses: actions/upload-artifact@v4
