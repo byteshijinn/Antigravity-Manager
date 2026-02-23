@@ -514,9 +514,9 @@ pub fn run() {
             // Autostart commands
             commands::autostart::toggle_auto_launch,
             commands::autostart::is_auto_launch_enabled,
-            // Warmup commands
-            commands::warm_up_all_accounts,
-            commands::warm_up_account,
+            // Warmup commands [DISABLED]
+            // commands::warm_up_all_accounts,
+            // commands::warm_up_account,
             commands::update_account_label,
             // HTTP API settings commands
             commands::get_http_api_settings,
